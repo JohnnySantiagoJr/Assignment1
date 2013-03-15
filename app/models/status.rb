@@ -4,4 +4,5 @@ class Status < ActiveRecord::Base
 
   validates :status, :presence => true
   validates_format_of :image_url, :with => URI::regexp(%w(http https))
+# my comments
 end
