@@ -11,7 +11,34 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130313032142) do
+ActiveRecord::Schema.define(:version => 20130315064537) do
+
+  create_table "follows", :force => true do |t|
+    t.string   "follower"
+    t.string   "followee"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "statuses", :force => true do |t|
+    t.text     "status"
+    t.string   "geocode"
+    t.string   "image_url"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "statuses", ["user_id"], :name => "index_statuses_on_user_id"
+
+  create_table "tags", :force => true do |t|
+    t.string   "tag"
+    t.integer  "status_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "tags", ["status_id"], :name => "index_tags_on_status_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"
