@@ -11,7 +11,7 @@
 </p>
 
 <h2>Add a status:</h2>
-<%= form for([@user, @user.statuses.build]) do |f| %>
+<%= form_for([@user, @user.statuses.build]) do |f| %>
 	<div class="field">
 		<%= f.label :status %><br />
 		<%= f.text_area :status %>
