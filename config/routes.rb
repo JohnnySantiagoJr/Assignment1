@@ -1,5 +1,7 @@
 JohnnySantiagoAssignment1::Application.routes.draw do
-  resources :users
+  resources :users do
+    resources :statuses
+  end
 
 
   # The priority is based upon order of creation:

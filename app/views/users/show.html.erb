@@ -10,6 +10,24 @@
   <%= @user.email %>
 </p>
 
+<h2>Statuses</h2>
+<% @user.statuses.each do |status| %>
+	<p>
+		<b>Status:</b>
+		<%= status.status %>
+	</p>
+
+	<p>
+		<b>Image:</b>
+		<%= status.image_url %>
+	</p>
+
+	<p>
+		<b>Geocode:</b>
+		<%= status.geocode %>
+	</p>
+<% end %>
+
 <h2>Add a status:</h2>
 <%= form_for([@user, @user.statuses.build]) do |f| %>
 	<div class="field">
@@ -28,6 +46,8 @@
 		<%= f.submit %>
 	</div>
 <% end %>
+
+#<br />
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
