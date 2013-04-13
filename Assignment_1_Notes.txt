@@ -1,7 +1,0 @@
-ASSIGNMENT1_NOTES
-
-•  create in the StatusesController works after replacing params[:id] with 1 in User.find() on line 3.
-
-Questions:
-•  "Statuses have and belong to many statuses (Hint, you'll need a join table)."?
-

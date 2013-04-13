@@ -15,4 +15,6 @@ describe User do
 		before { @user.name = " " }
 		it { should_not be_valid }
 	end
+
+	describe "when "
 end

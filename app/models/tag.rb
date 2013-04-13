@@ -4,5 +4,5 @@ class Tag < ActiveRecord::Base
 
   validates :tag, :presence => true
 	
-  has_many :status
+  has_and_belongs_to_many :statuses
 end
