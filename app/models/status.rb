@@ -7,4 +7,5 @@ class Status < ActiveRecord::Base
   has_and_belongs_to_many :statuses, :foreign_key => "status_a_id", :association_foreign_key => "status_b_id"
   belongs_to :user
   has_and_belongs_to_many :tags
+
 end

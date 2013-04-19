@@ -20,14 +20,14 @@ class User < ActiveRecord::Base
   	return statuses.length
   end
   
-  def average_word_size_per_status
+  def average_word_count_per_status
     @statuses = statuses
     @status_count = @statuses.count
     @total_word_count = 0
     @statuses.each do |this|
       @status = this.status
-      @total_word_count += @status.split.average_word_size_per_status
+      @total_word_count += @status.split.size
     end
-    return @total_word_count/status_count
+    return @total_word_count/@status_count.to_f
   end
 end
